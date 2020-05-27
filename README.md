@@ -20,6 +20,11 @@ npm run build
 npm run test:unit
 ```
 
+### Run your cypress tests
+```
+npm run cypress
+```
+
 ### Lints and fixes files
 ```
 npm run lint
