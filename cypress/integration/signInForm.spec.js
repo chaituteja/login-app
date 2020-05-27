@@ -1,4 +1,4 @@
-describe("Sign in form test", () => {
+describe("Login App form test", () => {
     it("Can fill the form and submit - successfull", () => {
         cy.visit("/");
         cy.get(".form");
@@ -29,10 +29,24 @@ describe("Sign in form test", () => {
         cy.visit("/");
         cy.get(".form__link").click();
         cy.get(".form__heading").contains("New Password");
+        cy.get('input[name="email"]').type("eve.holt@reqres.in").should("have.value", "eve.holt@reqres.in");
         cy.get('input[name="newPassword"]').type("password").should("have.value", "password");
         cy.get('input[name="confirmNewPassword"]').type("password").should("have.value", "password");
-        cy.get("button").contains("Save");
+        cy.get("button").click();
+        cy.contains("Password reset success");
         cy.get(".header__logo").click();
         cy.get(".form__heading").contains("Sign In");
-      }); 
+      });
+      
+      it("Can fill the register form and submit - unsuccessfull", () => {
+        cy.visit("/");
+        cy.get(".form__link").click();
+        cy.get('input[name="email"]').type("eve.holt@test.in").should("have.value", "eve.holt@test.in");
+        cy.get('input[name="newPassword"]').type("password").should("have.value", "password");
+        cy.get("button").click();
+        cy.get(".form__error").contains("Please fill all fields and match passwords");
+        cy.get('input[name="confirmNewPassword"]').type("password").should("have.value", "password");
+        cy.get("button").click();
+        cy.get(".form__error").contains("Please provide correct email");
+      });
   });
