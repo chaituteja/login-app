@@ -2,13 +2,13 @@
     <div class="container">
         <div class="form">
             <div class="form__fields">
-                <div class="heading"><span>Sign In</span></div>
+                <div class="form__heading"><span>Sign In</span></div>
                 <div v-show="!result">
                     <Input label="Email" name="email" type="email" placeholder="Enter email" v-on:change="getEmail($event)"/>
                     <p class="form__error" v-if="result === false">Please provide correct email</p>
                     <Input label="Password" name="password" type="password" placeholder="Enter password" v-on:change="getPassword($event)"/>
                     <p class="form__error" v-if="emptyFields === true">Please fill both fields</p>
-                    <p><a href="register.html">Want to reset password ?</a></p>
+                    <p><a class="form__link" href="register.html">Want to reset password ?</a></p>
                     <Button name="Login" v-on:clicked="login()"/>
                 </div>
                 <div v-show="result === true"><h2>Success</h2><b>Token : {{ token }}</b></div>

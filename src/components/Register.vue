@@ -2,7 +2,7 @@
     <div class="container">
         <div class="form">
             <div class="form__fields">
-                <div class="heading"><span>New Password</span></div>
+                <div class="form__heading"><span>New Password</span></div>
                 <div>
                     <Input label="New password" type="password" name="newPassword" placeholder="Enter new password" v-on:change="getPassword($event)"/>
                     <Input label="Confirm password" type="password" name="confirmNewPassword" placeholder="Confirm your new password" v-on:change="getConfirmPassword($event)"/>
