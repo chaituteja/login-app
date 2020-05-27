@@ -5,7 +5,6 @@ import SignIn from '@/components/SignIn.vue'
 
 describe('SignIn.vue', () => {
   it('submits login form - success', async () => {
-    // global.fetch = () => Promise.resolve({ status: 200 })  
     global.fetch = () => Promise.resolve({ status: 200 ,json: () => [] })
     const wrapper = mount(SignIn);
 

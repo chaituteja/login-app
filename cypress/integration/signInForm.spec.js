@@ -27,10 +27,12 @@ describe("Sign in form test", () => {
       
       it("clicking reset password link should take to register page and fill form", () => {
         cy.visit("/");
-        cy.get("a").click();
-        cy.get(".heading").contains("New Password");
+        cy.get(".form__link").click();
+        cy.get(".form__heading").contains("New Password");
         cy.get('input[name="newPassword"]').type("password").should("have.value", "password");
         cy.get('input[name="confirmNewPassword"]').type("password").should("have.value", "password");
         cy.get("button").contains("Save");
+        cy.get(".header__logo").click();
+        cy.get(".form__heading").contains("Sign In");
       }); 
   });
