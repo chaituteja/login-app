@@ -9,12 +9,12 @@
     name: 'Button',
     props: {
         name: {
-            type: String,
+            type: String
         }
     },  
     methods: {
-        submit: function(){
-          this.$emit("clicked", true);
+        submit: function () {
+          this.$emit('clicked', true)
         }
       }
   }

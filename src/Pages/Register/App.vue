@@ -12,7 +12,7 @@ import ChangePassword from '../../components/Register.vue'
 export default {
   name: 'Register',
   components: {
-    Header,ChangePassword 
+    Header, ChangePassword 
   }
 }
 </script>
