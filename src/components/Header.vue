@@ -1,11 +1,7 @@
 <template>
     <div class="header">
         <div class="header__logo">
-            <a href="/"><img alt="logo" src="../assets/logo.svg"></a> 
-        </div>
-        <div class="header__info">
-            <span>About Frankie </span>
-            <i class="fas fa-user-circle"></i>
+            <a href="/"><img alt="logo" src="../assets/logo.png"></a> 
         </div>
     </div>
 </template>
